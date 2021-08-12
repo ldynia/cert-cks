@@ -3,7 +3,8 @@
 # kube-bench
 ```bash
 $ ./kube-bench --config-dir `pwd`/cfg --config `pwd`/cfg/config.yaml
-$ docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -t aquasec/kube-bench:latest run --targets=master --version 1.13
+$ docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -v $(which kubectl):/usr/local/mount-from-host/bin/kubectl -t aquasec/kube-bench:latest run --targets=master --version 1.20
+$ docker run --pid=host -v /etc:/etc:ro -v /var:/var:ro -v $(which kubectl):/usr/local/mount-from-host/bin/kubectl -t aquasec/kube-bench:latest run --targets=master --version 1.20
 ```
 
 
